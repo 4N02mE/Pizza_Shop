@@ -5,16 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>PIZZA SHOP</title>
-<link rel="stylesheet" href="action/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	
 	<%@include file="common/header.jsp" %>
 	<%@include file="common/nav.jsp" %>
 	
 	<section>
 		<% 
-		String section = request.getParameter("section");
+		String section = request.getParameter("section") != null ? request.getParameter("section") : "";
 		
 		switch(section) {
 		case "sale_create" :
@@ -34,13 +33,14 @@
 			break;
 		
 		default :
+			%><h4>피자전문점 판매관리 프로그램을 작성한다.</h4><%
 			break;
 			
 		}
 		%>
-		
-		<%@include file="common/footer.jsp" %>
 	</section>
+	
+	<%@include file="common/footer.jsp" %>
 	
 </body>
 </html>
