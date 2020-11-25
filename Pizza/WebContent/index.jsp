@@ -11,34 +11,36 @@
 	
 	<%@include file="common/header.jsp" %>
 	<%@include file="common/nav.jsp" %>
-
-	<% 
-	String section = request.getParameter("section");
 	
-	switch(section) {
-	case "sale_create" :
-		%><%@include file="section/sale_create.jsp" %><%
-		break;
+	<section>
+		<% 
+		String section = request.getParameter("section");
 		
-	case "sale_list" :
-		%><%@include file="section/sale_list.jsp" %><%
-		break;
+		switch(section) {
+		case "sale_create" :
+			%><%@include file="section/sale_create.jsp" %><%
+			break;
+			
+		case "sale_list" :
+			%><%@include file="section/sale_list.jsp" %><%
+			break;
+			
+		case "sale_list_by_shop" :
+			%><%@include file="section/sale_list_by_shop.jsp" %><%
+			break;
+			
+		case "sale_list_by_product" :
+			%><%@include file="section/sale_list_by_product.jsp" %><%
+			break;
 		
-	case "sale_list_by_shop" :
-		%><%@include file="section/sale_list_by_shop.jsp" %><%
-		break;
+		default :
+			break;
+			
+		}
+		%>
 		
-	case "sale_list_by_product" :
-		%><%@include file="section/sale_list_by_product.jsp" %><%
-		break;
-	
-	default :
-		break;
-		
-	}
-	%>
-	
-	<%@include file="common/footer.jsp" %>
+		<%@include file="common/footer.jsp" %>
+	</section>
 	
 </body>
 </html>
